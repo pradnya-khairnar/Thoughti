@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TasksService } from './tasks.service';
 import { Task } from './task.model';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ export class AppComponent implements OnInit {
   importTasks: Task[] = [];
   importantFlag: boolean = true;
   taskForm: FormGroup;
+  expiryDate: string = formatDate(new Date(), 'yyyy-MM-dd', 'en');
 
   constructor(private taskService: TasksService) {}
 
@@ -25,7 +27,9 @@ export class AppComponent implements OnInit {
         Validators.required,
         Validators.maxLength(200),
       ]),
-      expiryDate: new FormControl('', Validators.required),
+      expiryDate: new FormControl(
+        formatDate(this.expiryDate, 'yyyy-MM-dd', 'en')
+      ),
       users: new FormControl(''),
       important: new FormControl('', Validators.required),
     });

@@ -34,7 +34,11 @@
           </div>
         </div>
         <div class="expiry">
-          <input type="date" value="12 May 2016" formControlName="expiryDate" />
+          <input
+            type="date"
+            formControlName="expiryDate"
+            value="{{ expiryDate | date: 'yyyy-MM-dd' }}"
+          />
           <label for="expiry">Expiry Date</label>
         </div>
         <div class="selectUser">
