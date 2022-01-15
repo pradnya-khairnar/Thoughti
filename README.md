@@ -1,27 +1,25 @@
-# TaskList
+# ThoughtI assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+## How to run project?
 
-## Development server
+- first run to install all dependencies of the project.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  `npm i`
 
-## Code scaffolding
+- In the root there is db.json which has json data and for the same to work we need to install json server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  `npm install -g json-server`
 
-## Build
+  to turn on the local server run
+  `json-server --watch db.json`
+  api's will be running on localhost://3000
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- to run project in development mode run
 
-## Running unit tests
+  `ng serve`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  Project will run on localhost://4200
 
-## Running end-to-end tests
+## How to run tests?
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`ng test`
